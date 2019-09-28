@@ -5,11 +5,17 @@ import UserOutput from "./components/UserOutput";
 
 const App = () => {
   const [userName] = useState({
-    name: "Maxine"
+    outputs: [
+      { name: "Tic", text: "1st paragraph" },
+      { name: "Tac", text: "2nd paragraph" },
+      { name: "Toe", text: "3rd paragraph" }
+    ]
   });
 
   return (
     <div className="App">
+      {/* Checkboxes ?? */}
+
       <ol>
         <li>Create TWO new components: UserInput and UserOutput</li>
         <li>
@@ -60,9 +66,12 @@ const App = () => {
           <UserInput />
         </div>
         <div className="border">
-          <UserOutput userName={userName.name} text="2nd paragraph" />
-          <UserOutput userName="Manu" text="3rd paragraph" />
-          <UserOutput userName="Mateo" text="4th paragraph" />
+          {userName.outputs.map(x => (
+            <div>
+              <p>{x.name}</p>
+              <p>{x.text}</p>
+            </div>
+          ))}
         </div>
       </div>
     </div>

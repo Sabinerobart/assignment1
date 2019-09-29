@@ -62,13 +62,15 @@ const App = () => {
           components - both with inline styles and stylesheets
         </li>
       </ol>
+      <hr style={{ margin: "5vh 0" }} />
+      <h1>Output</h1>
       <div
         style={{
           display: "flex",
           justifyContent: "center",
-          padding: "5vh",
+          padding: "4vh",
           background: "#eee",
-          margin: "15vh 0"
+          border: "2px solid black"
         }}
         className="flex"
       >

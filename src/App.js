@@ -73,7 +73,10 @@ const App = () => {
         className="flex"
       >
         <div className="border">
-          <UserInput changed={handleChange} />
+          <UserInput
+            changed={handleChange}
+            currentName={userName.outputs[0].name}
+          />
         </div>
         <div className="border">
           {userName.outputs.map((x, key) => (

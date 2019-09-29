@@ -1,12 +1,7 @@
 import React from "react";
 
-const UserInput = () => {
-  return (
-    <React.Fragment>
-      <h5>Name :</h5>
-      <input />
-    </React.Fragment>
-  );
+const UserInput = props => {
+  return <input type="text" onChange={props.changed} />;
 };
 
 export default UserInput;

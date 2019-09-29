@@ -4,7 +4,7 @@ import UserInput from "./components/UserInput";
 import UserOutput from "./components/UserOutput";
 
 const App = () => {
-  const [userName] = useState({
+  const [userName, setUserName] = useState({
     outputs: [
       { name: "Tic", text: "1st paragraph" },
       { name: "Tac", text: "2nd paragraph" },
@@ -12,10 +12,19 @@ const App = () => {
     ]
   });
 
+  const handleChange = e => {
+    setUserName({
+      outputs: [
+        { name: e.target.value, text: "1st paragraph" },
+        { name: e.target.value, text: "2nd paragraph" },
+        { name: e.target.value }
+      ]
+    });
+  };
+
   return (
     <div className="App">
-      {/* Checkboxes ?? */}
-
+      <h1>Assignment</h1>
       <ol>
         <li>Create TWO new components: UserInput and UserOutput</li>
         <li>
@@ -61,16 +70,14 @@ const App = () => {
           background: "#eee",
           margin: "15vh 0"
         }}
+        className="flex"
       >
         <div className="border">
-          <UserInput />
+          <UserInput changed={handleChange} />
         </div>
         <div className="border">
-          {userName.outputs.map(x => (
-            <div>
-              <p>{x.name}</p>
-              <p>{x.text}</p>
-            </div>
+          {userName.outputs.map((x, key) => (
+            <UserOutput key={key} userName={x.name} text={x.text} />
           ))}
         </div>
       </div>

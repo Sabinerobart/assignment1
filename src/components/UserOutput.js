@@ -2,10 +2,10 @@ import React from "react";
 
 const UserOutput = props => {
   return (
-    <div>
+    <React.Fragment>
       <p>{props.userName}</p>
       <p>{props.text}</p>
-    </div>
+    </React.Fragment>
   );
 };
 
